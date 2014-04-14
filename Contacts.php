@@ -35,6 +35,68 @@
 
 </header>
 
+<!-- SCRIPT DE VERIFICATIONS DES CHAMPS FORMULAIRE -->
+<script type="text/javascript">
+
+function verif_champ_obligatoire()
+{
+ if(document.contactform.prenom.value == "")  {
+   alert("Veuillez entrer votre prénom!");
+   document.contactform.prenom.focus();
+   return false;
+  }
+ if(document.contactform.nom.value == "") {
+   alert("Veuillez entrer votre nom de famille!");
+   document.contactform.nom.focus();
+   return false;
+  }
+ if(document.contactform.mail.value == "") {
+   alert("Veuillez entrer votre adresse email!");
+   document.contactform.mail.focus();
+   return false;
+  }
+		
+	//	Verifications radio téléphone est coché et champ téléphone non renseigné
+	
+	var rgxPhone = /^0[1-68]([-. ]?[0-9]{2}){4}$/;
+		
+	if(document.getElementById("phone").checked && !document.contactform.telephone.value.match(rgxPhone)) {
+		alert("Vous souhaitez être contacté par téléphone mais vous n'avez pas renseigné un numéro valide!");
+		document.contactform.telephone.focus();
+		return false;  
+	}
+	
+//	Verification email
+
+var rgxMail = /^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
+
+  if ( !document.contactform.mail.value.match(rgxMail))  
+  {  
+    alert("Ce n'est pas une adresse mail valide!");  
+    return false;  
+  }  
+	
+ /*if(document.contactform.mail.value.indexOf('@') == -1) {
+   alert("Ce n'est pas une adresse email valide!");
+   document.contactform.mail.focus();
+   return false;
+  }
+	 if(document.contactform.mail.value.indexOf('.') == -1) {
+   alert("Ce n'est pas une adresse email valide!");
+   document.contactform.mail.focus();
+   return false;
+  }*/
+	
+	 if(document.contactform.comments.value == "") {
+   alert("Veuillez entrer votre message!");
+   document.contactform.comments.focus();
+   return false;
+  }
+}
+//-->
+</script>
+
+
 <body class="page">
 <div class="container">
 
@@ -43,14 +105,14 @@
 
 <h2>Formulaire de contact</h2>
 	
-   <form style="text-align:left" name="contactform"  method="post" action="mail-form.php">
+   <form style="text-align:left" name="contactform"  method="post" action="mail-form.php" onSubmit="return verif_champ_obligatoire()">
 <table width="450px">
 <tr>
  <td valign="top">
   <label for="Prénom">Prénom *</label>
  </td>
  <td valign="top">
-  <input  type="text" name="Prénom" maxlength="50" size="30">
+  <input  type="text" name="prenom" maxlength="50" size="30">
  </td>
 </tr>
 <tr>
@@ -58,7 +120,7 @@
   <label for="Nomdefamille">Nom de famille *</label>
  </td>
  <td valign="top">
-  <input  type="text" name="Nomdefamille" maxlength="50" size="30">
+  <input  type="text" name="nom" maxlength="50" size="30">
  </td>
 </tr>
 <tr>
@@ -66,7 +128,7 @@
   <label for="email">Addresse Email *</label>
  </td>
  <td valign="top">
-  <input  type="text" name="email" maxlength="80" size="30">
+  <input  type="text" name="mail" maxlength="80" size="30">
  </td>
 </tr>
 <tr>
@@ -90,7 +152,7 @@
   <label for="choices">Comment avez vous trouvé le site ? *</label>
  </td>
  <td valign="top">
-  <input type="radio" name="choices" value="Internet">Internet<br>
+  <input type="radio" name="choices" value="Internet" checked>Internet<br>
   <input type="radio" name="choices" value="Ami(e)">Ami(e) <br>
   <input type="radio" name="choices" value="Publicité">Publicité(e) <br> 
  <br> </td>
@@ -101,8 +163,8 @@
   <label for="contact">Options *</label>
  </td>
  <td valign="top">
-  <input type="radio" name="contact" value="Téléphone">Téléphone<br>
- <input type="radio" name="contact" value="Email">Email
+  <input type="radio" name="contact" value="Téléphone" id="phone">Téléphone<br>
+ <input type="radio" name="contact" value="Email" checked>Email
  </td>
 </tr>
 <tr>
