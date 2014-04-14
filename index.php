@@ -1,5 +1,8 @@
-﻿<!DOCTYPE HTML>
-<html><head>
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="index.css" type="text/css"/>
+<!--<link rel="stylesheet" href="css.css" type="text/css" media="screen" />-->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Auto-Ecole Driver</title>
 <META NAME="description" CONTENT="Auto-Ecole Paris"> 
@@ -14,7 +17,7 @@
         <meta property="og:region" content="Île-de-France"/>
         <meta property="og:postal-code" content="75001"/>
         <meta property="og:country-name" content="France"/>
-		
+
 		<!-- Include Main jQuery library for slider -->
         <script type="text/Javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
         <!-- Include Main Easy Slides library & default css file-->
@@ -24,9 +27,7 @@
         <script type="text/Javascript" src="Examples/Example 1/example_1.js"></script>
         <link rel="stylesheet" type="text/css" href="Examples/Example 1/styles.css" />
 		<!-- Include CSS stylesheet for this page -->
-        <link rel="stylesheet" type="text/css" href="index.css" />
-        
-
+        <link rel="stylesheet" type="text/css" href="index.css" />		
 </head>
 
 <header>
@@ -40,24 +41,20 @@
 <div class="container">
 
 
-  <div class="content"; style="text-align:center">
-  
+<div class="content"; align="center">
+ 
 
-<h1> Vos heures de cours programmées </h1>
-		<form method="post" name="insc" action="http://81.64.83.238:8081/Site_PPE/AfficherHeure.php">
-			Adresse mail :<input type="text" name="adresseMail"> <br>
-			Mot de passe :<input type="password" name="password"> <br>
-			<input type="submit" value="OK">
-		</form>
+<a href="http://81.64.83.238:8081/Site_PPE/index.php"><img src="\Site_PPE\Images\driving-school.jpg"></a>
 
-  </div>
-  <!-- end .content -->
-  
 
+<div style="text-align:center; margin:30px; border-bottom: 1px solid; border-top : 1px solid"><br><h1>Bienvenue sur le site de l'auto école Driver!</h1></div>
+<!--<div style="text-align:center; margin:30px;border-bottom: 1px solid; border-top : 1px solid"><h1> Bienvenue sur l'auto école Driver ! </h1></div>-->
+	
+  <!-- end .content --></div>
 
   <!-- end .container --></div>
-
 </body>
+
 <footer>
 
 <!--footer-->
@@ -65,5 +62,3 @@
 
 </footer>
 </html>
-
-

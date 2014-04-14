@@ -99,7 +99,7 @@ $.fn.easySlides = function(options) {
                     });
             })
             .error(function () {
-                container.html('<b>Error Loading Image:</b> '+path); // If there is an error display a message
+                container.html('<b>Erreur lors du chargement de l\'image:</b> '+path); // If there is an error display a message
             })
             .attr('src', path); // attatch the image and action the stuff above like the fade in.
 
@@ -147,7 +147,7 @@ $.fn.easySlides = function(options) {
                 
             }).error(function () {
                 clearInterval(timer);                       // Stop repeating!
-                container.html('<b>Error Loading Image:</b> '+path); // If there is an error display a message
+                container.html('<b>Erreur lors du chargement de l\'image:</b> '+path); // If there is an error display a message
             })
             .attr('src', path);                             // attatch the image and action the stuff above
         }

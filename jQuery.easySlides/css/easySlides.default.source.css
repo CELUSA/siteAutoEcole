@@ -6,7 +6,7 @@
 .easy_slides_img1, .easy_slides_img2{
     display:none;
     top:0;
-    position:absolute;
+    position:relative;
 }
 
 .easy_slides_img1 {
@@ -18,7 +18,7 @@
 }
 
 .easy_slides_caption {
-    position:absolute;
+    position:relative;
     bottom:0;
     background-image:url(../img/bg.png);
     background-color:transparent;

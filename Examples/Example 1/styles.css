@@ -1,10 +1,13 @@
 #example_1_container {
-    width:940px;
-    height:430px;
+	position: relative;
+    max-width:100%;
+    height:400px;
+	padding-bottom:0px;
 }
 
 #example_1_container .easy_slides_caption {
-    width:940px;
-    height:430px;
+	position: relative;
+    max-width:100%;
+    height:400px;
     padding: 10px 0 0 10px;
 }

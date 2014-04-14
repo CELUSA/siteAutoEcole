@@ -38,75 +38,26 @@
 <body class="page">
 <div class="container">
 
+ <div class="content">
 
-<div class="content">
-  
-<?php
-$password = $_POST["password"];
-$adresseMail = $_POST["adresseMail"];
- require "C:\wamp\www\Site_PPE\heureDeCoursEtudiant.php";
- require "C:\wamp\www\Site_PPE\heureDeCoursMoniteur.php";
+<div style=" margin:15px;text-align:justify"><p> <div>
 
- 
-// CONNEXION BASE DE DONNEES
+<h3><center>Notre auto école vous propose cette opportunité ouverte à tous</center></h3>
+<p> <center><img alt="" src="images/1e.png"></center><br><p>Avec 700 000 candidats reçus chaque année, le permis de conduire est le premier examen en France.</p>
+<p>Parce qu’un grand nombre de jeunes de 16 à 25 ans n’ont pas toujours les fonds nécessaires pour le financement de leur formation à la conduite, l’Etat a mis en place le permis à un euro par jour.<br>
+L’objectif est simple : favoriser l’accès des jeunes au permis de conduire, à travers un système de prêt à taux zéro avec un remboursement d’un euro par jour.</p>
+<p>Le coût total de la formation au permis de conduire ne change pas, mais l’établissement financier avance l’argent et l’Etat paie les intérêts.</p>
+<p>Tous les jeunes qui ont entre 16 et 25 ans révolus peuvent en bénéficier, sous réserve que l’établissement financier accepte leur dossier. Après avoir déterminé le nombre d’heures prévisionnel nécessaire, l’auto école établit un devis et&nbsp;un contrat pour la formation au permis de conduire. Ce contrat servira à formuler la demande de prêt auprès d’un établissement financier. Le remboursement (30 Euros par mois) commence dès que la somme est débloquée.</p>
+</div> </p></div>
 
-/*if ($password != "" && $adresseMail != "")
-{*/
 
-	try
-	{
-		$autoecole = new PDO('mysql:host=localhost;dbname=auto_ecole_ppe', 'root', '');
-		//$autoecole = new PDO('mysql:host=172.20.45.39;dbname=auto_ecole_ppe', 'root', '');
-	}
-	catch (Exception $e)
-	{
-        die('Erreur : '.$e->getMessage('Erreur de connexion a la base de données'));
-	}
-	
-// VERIFICATION LOGIN ET MOT DE PASSE
-	
-	//$verifMdpClient = $autoecole->query("SELECT count(*) as nbligne FROM client WHERE adresse_mail LIKE '".$_POST["adresseMail"]."' AND password LIKE //MD5('". $_POST["password"]."')");
-	
-	$verifMdpClient = $autoecole->query("SELECT count(*) as nbligne FROM client WHERE adresse_mail LIKE '".$adresseMail."' AND password LIKE MD5('".$password."')");
-	
-		
-	//$reponseClient = mysql_query($verifMdpClient);
-	$ligne=$verifMdpClient->fetch();
-		if ($ligne['nbligne'] == 1 )
-			{
-        //echo "GOOD CLIENT !";
-		afficherHeureDeCoursEtudiant($_POST['adresseMail']);
-			}
-		else
-			{
-				$verifMdpMoniteur = $autoecole->query("SELECT count(*) as nbligne FROM moniteur WHERE adresse_mail LIKE '". $_POST["adresseMail"]."' AND password LIKE MD5('". $_POST["password"]."')");
 
-				$ligne=$verifMdpMoniteur->fetch();
-					if ($ligne['nbligne'] == 1 )
-						{
-					//echo "GOOD MONITEUR !";
-					afficherHeureDeCoursMoniteur($_POST['adresseMail']);
-						}
-					else if($ligne['nbligne'] == 0)
-						{
-							echo "Mauvaise combinaison adresse mail / mdp.";
-						}
-			}
-/*}*/
+</div>
 
-?>
-<html>
-<!-- Bouton Retour Index -->
-	<body>
-		<form method="post" name="retour" action="http://81.64.83.238:8081/Site_PPE/index.php">
-			<input type="submit" value="Accueil">
-		</form>
-	</body>
-</html>
-  </div>
   <!-- end .content -->
-  
+
   <!-- end .container --></div>
+
 </body>
 
 <footer>
@@ -116,15 +67,4 @@ $adresseMail = $_POST["adresseMail"];
 
 </footer>
 </html>
-
-
-
-
-
-
-
-
-
-
-
 

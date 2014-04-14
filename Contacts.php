@@ -38,74 +38,90 @@
 <body class="page">
 <div class="container">
 
-
-<div class="content">
+  <div class="content">
   
-<?php
-$password = $_POST["password"];
-$adresseMail = $_POST["adresseMail"];
- require "C:\wamp\www\Site_PPE\heureDeCoursEtudiant.php";
- require "C:\wamp\www\Site_PPE\heureDeCoursMoniteur.php";
 
- 
-// CONNEXION BASE DE DONNEES
-
-/*if ($password != "" && $adresseMail != "")
-{*/
-
-	try
-	{
-		$autoecole = new PDO('mysql:host=localhost;dbname=auto_ecole_ppe', 'root', '');
-		//$autoecole = new PDO('mysql:host=172.20.45.39;dbname=auto_ecole_ppe', 'root', '');
-	}
-	catch (Exception $e)
-	{
-        die('Erreur : '.$e->getMessage('Erreur de connexion a la base de données'));
-	}
+<h2>Formulaire de contact</h2>
 	
-// VERIFICATION LOGIN ET MOT DE PASSE
-	
-	//$verifMdpClient = $autoecole->query("SELECT count(*) as nbligne FROM client WHERE adresse_mail LIKE '".$_POST["adresseMail"]."' AND password LIKE //MD5('". $_POST["password"]."')");
-	
-	$verifMdpClient = $autoecole->query("SELECT count(*) as nbligne FROM client WHERE adresse_mail LIKE '".$adresseMail."' AND password LIKE MD5('".$password."')");
-	
-		
-	//$reponseClient = mysql_query($verifMdpClient);
-	$ligne=$verifMdpClient->fetch();
-		if ($ligne['nbligne'] == 1 )
-			{
-        //echo "GOOD CLIENT !";
-		afficherHeureDeCoursEtudiant($_POST['adresseMail']);
-			}
-		else
-			{
-				$verifMdpMoniteur = $autoecole->query("SELECT count(*) as nbligne FROM moniteur WHERE adresse_mail LIKE '". $_POST["adresseMail"]."' AND password LIKE MD5('". $_POST["password"]."')");
+   <form style="text-align:left" name="contactform"  method="post" action="mail-form.php">
+<table width="450px">
+<tr>
+ <td valign="top">
+  <label for="Prénom">Prénom *</label>
+ </td>
+ <td valign="top">
+  <input  type="text" name="Prénom" maxlength="50" size="30">
+ </td>
+</tr>
+<tr>
+ <td valign="top"">
+  <label for="Nomdefamille">Nom de famille *</label>
+ </td>
+ <td valign="top">
+  <input  type="text" name="Nomdefamille" maxlength="50" size="30">
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+  <label for="email">Addresse Email *</label>
+ </td>
+ <td valign="top">
+  <input  type="text" name="email" maxlength="80" size="30">
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+  <label for="telephone">Numéro de téléphone</label>
+ </td>
+ <td valign="top">
+  <input  type="text" name="telephone" maxlength="30" size="30">
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+  <label for="comments">Message *</label>
+ </td>
+ <td valign="top">
+  <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+  <label for="choices">Comment avez vous trouvé le site ? *</label>
+ </td>
+ <td valign="top">
+  <input type="radio" name="choices" value="Internet">Internet<br>
+  <input type="radio" name="choices" value="Ami(e)">Ami(e) <br>
+  <input type="radio" name="choices" value="Publicité">Publicité(e) <br> 
+ <br> </td>
+</tr>
+<br>
+<tr>
+ <td valign="top">
+  <label for="contact">Options *</label>
+ </td>
+ <td valign="top">
+  <input type="radio" name="contact" value="Téléphone">Téléphone<br>
+ <input type="radio" name="contact" value="Email">Email
+ </td>
+</tr>
+<tr>
+ <td colspan="2" style="text-align:center"> <br>
+  <input type="submit" value="Envoyer" align="center">
+ </td>
+</tr>
+</table>
+</form>
+</div>
 
-				$ligne=$verifMdpMoniteur->fetch();
-					if ($ligne['nbligne'] == 1 )
-						{
-					//echo "GOOD MONITEUR !";
-					afficherHeureDeCoursMoniteur($_POST['adresseMail']);
-						}
-					else if($ligne['nbligne'] == 0)
-						{
-							echo "Mauvaise combinaison adresse mail / mdp.";
-						}
-			}
-/*}*/
+</div>
 
-?>
-<html>
-<!-- Bouton Retour Index -->
-	<body>
-		<form method="post" name="retour" action="http://81.64.83.238:8081/Site_PPE/index.php">
-			<input type="submit" value="Accueil">
-		</form>
-	</body>
-</html>
+
+
+
   </div>
   <!-- end .content -->
-  
+
   <!-- end .container --></div>
 </body>
 
@@ -116,15 +132,3 @@ $adresseMail = $_POST["adresseMail"];
 
 </footer>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
