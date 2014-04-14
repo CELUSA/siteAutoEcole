@@ -14,6 +14,7 @@
         <meta property="og:region" content="Île-de-France"/>
         <meta property="og:postal-code" content="75001"/>
         <meta property="og:country-name" content="France"/>
+		<meta http-equiv="refresh" content="5;url=index.php">
 
 
         <!-- Include Main jQuery library for slider -->
@@ -44,7 +45,7 @@
 
 <br>
 
-<p>Si vous souhaitez accéder à la page d'accueil, <a href="http://81.64.83.238:8081/Site_PPE/index.php">cliquez ici</a></p>
+<p>Vous serez redirigé vers l'acceuil dans 5 secondes. </p><p>Si vous souhaitez accéder à la page d'accueil, <a href="http://81.64.83.238:8081/Site_PPE/index.php">cliquez ici</a></p>
 
 </div>
 
