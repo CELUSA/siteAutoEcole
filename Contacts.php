@@ -61,7 +61,7 @@ function verif_champ_obligatoire()
 	var rgxPhone = /^0[1-68]([-. ]?[0-9]{2}){4}$/;
 		
 	if(document.getElementById("phone").checked && !document.contactform.telephone.value.match(rgxPhone)) {
-		alert("Vous souhaitez être contacté par téléphone mais vous n'avez pas renseigné un numéro valide!");
+		alert("Vous souhaitez être contacté(e) par téléphone mais vous n'avez pas renseigné de numéro valide!");
 		document.contactform.telephone.focus();
 		return false;  
 	}
