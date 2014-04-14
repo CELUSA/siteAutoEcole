@@ -3,26 +3,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Auto-Ecole Driver</title>
 <META NAME="description" CONTENT="Auto-Ecole Paris"> 
-<<<<<<< HEAD
-<META NAME="keywords" CONTENT="Auto, Ècole, conduite,  Paris, Paris 1e ">
-=======
 <META NAME="keywords" CONTENT="Auto, √©cole, conduite,  Paris, Paris 1e ">
->>>>>>> 7a6551eabbc6249f59e7ff4749f89001bb2cd3b6
         <meta name="robots" content="index,follow" />
         <meta property="og:title" content="Driver, Paris 1er"/>
         <meta property="og:type" content="autoecole" />
         <meta property="og:latitude" content="2.358404"/>
         <meta property="og:longitude" content="48.856022"/>
         <meta property="og:street-address" content="24 rue de Rivoli"/>
-<<<<<<< HEAD
-        <meta property="og:locality" content="Paris 1Ëme"/>
-        <meta property="og:region" content="Œle-de-France"/>
-=======
         <meta property="og:locality" content="Paris 1√®me"/>
         <meta property="og:region" content="√éle-de-France"/>
->>>>>>> 7a6551eabbc6249f59e7ff4749f89001bb2cd3b6
         <meta property="og:postal-code" content="75001"/>
         <meta property="og:country-name" content="France"/>
+		<meta http-equiv="refresh" content="5;url=index.php">
 
 
         <!-- Include Main jQuery library for slider -->
@@ -53,7 +45,7 @@
 
 <br>
 
-<p>Si vous souhaitez acceder a la page d'accueil, <a href="http://81.64.83.238:8081/Site_PPE/index.php">cliquez ici</a></p>
+<p>Vous serez redirig√© vers l'acceuil dans 5 secondes. </p><p>Si vous souhaitez acceder a la page d'accueil, <a href="http://81.64.83.238:8081/Site_PPE/index.php">cliquez ici</a></p>
 
 </div>
 
