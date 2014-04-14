@@ -3,15 +3,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Auto-Ecole Driver</title>
 <META NAME="description" CONTENT="Auto-Ecole Paris"> 
+<<<<<<< HEAD
 <META NAME="keywords" CONTENT="Auto, école, conduite,  Paris, Paris 1e ">
+=======
+<META NAME="keywords" CONTENT="Auto, Ã©cole, conduite,  Paris, Paris 1e ">
+>>>>>>> 7a6551eabbc6249f59e7ff4749f89001bb2cd3b6
         <meta name="robots" content="index,follow" />
         <meta property="og:title" content="Driver, Paris 1er"/>
         <meta property="og:type" content="autoecole" />
         <meta property="og:latitude" content="2.358404"/>
         <meta property="og:longitude" content="48.856022"/>
         <meta property="og:street-address" content="24 rue de Rivoli"/>
+<<<<<<< HEAD
         <meta property="og:locality" content="Paris 1ème"/>
         <meta property="og:region" content="Île-de-France"/>
+=======
+        <meta property="og:locality" content="Paris 1Ã¨me"/>
+        <meta property="og:region" content="ÃŽle-de-France"/>
+>>>>>>> 7a6551eabbc6249f59e7ff4749f89001bb2cd3b6
         <meta property="og:postal-code" content="75001"/>
         <meta property="og:country-name" content="France"/>
 

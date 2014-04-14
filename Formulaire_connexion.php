@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿<!DOCTYPE HTML>
+=======
+<!DOCTYPE HTML>
+>>>>>>> 7a6551eabbc6249f59e7ff4749f89001bb2cd3b6
 <html><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Auto-Ecole Driver</title>
