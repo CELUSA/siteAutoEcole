@@ -77,32 +77,81 @@ Public : Tous les conducteurs ayant perdu des points ou condamnés dans le cadre
 <h5> Se renseigner </h5>
 </th>
 </tr>
-<tr>
-<td>Du Vendredi 20 Juin au&nbsp<br>
-Samedi 21 Juin</td>
-<td>Auto Ecole Driver<br>
 
-21 RUE DE RIVOLI<br>
+<?php
 
-75001 PARIS</td>
-<td>260.00 €</td>
-<td>
+//Connexion base de données
 
-<form><a title="Contact" href="http://81.64.83.238:8081/Site_PPE/Contacts.php">Se Renseigner</a></form>
-</td>
-</tr>
-<tr>
-<td>Du Vendredi 18 Juillet au&nbsp<br>
-Samedi 19 Juillet</td>
-<td>Auto Ecole Driver<br>
-21 RUE DE RIVOLI<br>
-75001 PARIS</td>
-<td>260.00 €</td>
-<td>
-<a title="Contact" href="http://81.64.83.238:8081/Site_PPE/Contacts.php">Se Renseigner</a></form>
-<form></form>
-</td>
-</tr>
+mysql_connect ("localhost","root","") or die ('ERREUR '.mysql_error("ERREUR DE CONNEXION A LA BASE DE DONNEES"));
+mysql_select_db ("auto_ecole_ppe") or die ('ERREUR '.mysql_error("ERREUR LORS DE LA SELECTION DE LA BASE DE DONNEES"));
+
+//Création de la requête
+
+$requete = "SELECT * FROM stage_recup_points";
+$resultat = mysql_query ($requete);
+
+//Recuperations des données et création des lignes du tableau
+
+while ($ligne = mysql_fetch_assoc($resultat)) {
+	
+	//TRANSFORMATION DATE debut US -> FR
+?>
+	<?php  $dateJourDebut = substr($ligne['stage_date_debut'],8, 10); ?>
+	<?php $dateMoisDebut = substr($ligne['stage_date_debut'],5, 7); ?>
+			<?php $dateMoisDebut = substr($dateMoisDebut,0, 2); if ($dateMoisDebut == '01') {$dateMoisDebut = 'Janvier';} if ($dateMoisDebut == '02') {$dateMoisDebut = 'Février';} if ($dateMoisDebut == '03') {$dateMoisDebut = 'Mars';} if ($dateMoisDebut == '04') {$dateMoisDebut = 'Avril';} if ($dateMoisDebut == '05') {$dateMoisDebut = 'Mai';} if ($dateMoisDebut == '06') {$dateMoisDebut = 'Juin';} if ($dateMoisDebut == '07') {$dateMoisDebut = 'Juillet';} if ($dateMoisDebut == '08') {$dateMoisDebut = 'Aout';} if ($dateMoisDebut == '09') {$dateMoisDebut = 'Septembre';} if ($dateMoisDebut == '10') {$dateMoisDebut = 'Octobre';} if ($dateMoisDebut == '11') {$dateMoisDebut = 'Novembre';} if ($dateMoisDebut == '12') {$dateMoisDebut = 'Décembre';}?>
+	<?php  $dateAnneeDebut = substr($ligne['stage_date_debut'],0, 4);?>
+
+	
+	<?php  $dateJourFin = substr($ligne['stage_date_fin'],8, 10); ?>
+	<?php $dateMoisFin = substr($ligne['stage_date_fin'],5, 7); ?>
+			<?php $dateMoisFin = substr($dateMoisFin,0, 2); 	if ($dateMoisFin == '01') {$dateMoisFin = 'Janvier';} if ($dateMoisFin == '02') {$dateMoisFin = 'Février';} if ($dateMoisFin == '03') {$dateMoisFin = 'Mars';} if ($dateMoisFin == '04') {$dateMoisFin = 'Avril';} if ($dateMoisFin == '05') {$dateMoisFin = 'Mai';} if ($dateMoisFin == '06') {$dateMoisFin = 'Juin';} if ($dateMoisFin == '07') {$dateMoisFin = 'Juillet';} if ($dateMoisFin == '08') {$dateMoisFin = 'Aout';} if ($dateMoisFin == '09') {$dateMoisFin = 'Septembre';} if ($dateMoisFin == '10') {$dateMoisFin = 'Octobre';} if ($dateMoisFin == '11') {$dateMoisFin = 'Novembre';} if ($dateMoisFin == '12') {$dateMoisFin = 'Décembre';}?>
+	<?php  $dateAnneeFin = substr($ligne['stage_date_fin'],0, 4);?>
+
+	
+	<?php	
+	echo "<tr>";
+		echo'<td> Du '.$dateJourDebut.' '.$dateMoisDebut.' '.$dateAnneeDebut.' <br> au '.$dateJourFin.' '.$dateMoisFin.' '.$dateAnneeFin.'</td>';
+		echo'<td>'.$ligne["stage_lieu"].'</td>';
+		echo'<td>'.$ligne["stage_prix"].' €</td>';
+		echo'<td>	<form><a title="Contact" href="http://81.64.83.238:8081/Site_PPE/Contacts.php">Se Renseigner</a></form>	</td>';
+	echo "</tr>";
+	
+	
+}
+?>
+
+<!-- TABLEAU EN DUR 
+
+		<tr>
+		<td>Du Vendredi 20 Juin au&nbsp<br>
+		Samedi 21 Juin</td>
+		<td>Auto Ecole Driver<br>
+
+		21 RUE DE RIVOLI<br>
+
+		75001 PARIS</td>
+		<td>260.00 €</td>
+		<td>
+
+		<form><a title="Contact" href="http://81.64.83.238:8081/Site_PPE/Contacts.php">Se Renseigner</a></form>
+		</td>
+		</tr>
+	
+		
+		<tr>
+		<td>Du Vendredi 18 Juillet au&nbsp<br>
+		Samedi 19 Juillet</td>
+		<td>Auto Ecole Driver<br>
+		21 RUE DE RIVOLI<br>
+		75001 PARIS</td>
+		<td>260.00 €</td>
+		<td>
+		<a title="Contact" href="http://81.64.83.238:8081/Site_PPE/Contacts.php">Se Renseigner</a></form>
+		<form></form>
+		</td>
+		</tr> -->
+		
+		
 </tbody>
 </table>
 </div></div>
