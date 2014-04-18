@@ -87,7 +87,7 @@ mysql_select_db ("auto_ecole_ppe") or die ('ERREUR '.mysql_error("ERREUR LORS DE
 
 //Création de la requête
 
-$requete = "SELECT * FROM stage_recup_points";
+$requete = "SELECT * FROM stage_recup_points WHERE stage_date_debut >= CURDATE() AND stage_date_fin  >= CURDATE()";
 $resultat = mysql_query ($requete);
 
 //Recuperations des données et création des lignes du tableau
